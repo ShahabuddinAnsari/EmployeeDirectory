@@ -1,6 +1,35 @@
-<mvc:View controllerName="employeeDirectory.controller.EmployeeList"
+<mvc:View
+    controllerName="employee.directory.controller.EmployeeList"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+>
+    <Page
+        id="employeeListContainer"
+        title="Employee List"
+        showNavButton="true"
+        showHeader="true"
+    >
+        <headerContent>
+            <Button
+                id="btnHeaderHelp"
+                text="Help"
+            />
+        </headerContent>
+        <content>
+            <List
+                id="employeeLists"
+                items="{/employees}"
+                itemPress="onEmpListItemPress"
+            >
+                <StandardListItem
+                    id="employeeRows"
+                    title="{name}"
+                    description="{role}"
+                    icon="sap-icon://person-placeholder"
+                    type="Active"
+                />
+            </List>
+        </content>
+        <footer />
     </Page>
 </mvc:View>

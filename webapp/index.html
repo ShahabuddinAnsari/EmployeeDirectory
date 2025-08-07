@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Employee Directory</title>
     <style>
       html,
@@ -16,10 +15,10 @@
     </style>
     <script
       id="sap-ui-bootstrap"
-      src="resources/sap-ui-core.js"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
       data-sap-ui-theme="sap_horizon"
       data-sap-ui-resourceroots='{
-            "employeeDirectory": "./"
+            "employee.directory": "./"
         }'
       data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
       data-sap-ui-compatVersion="edge"
@@ -29,10 +28,11 @@
   </head>
   <body class="sapUiBody sapUiSizeCompact" id="content">
     <div
+      id="container"
       data-sap-ui-component
-      data-name="employeeDirectory"
+      data-name="employee.directory"
       data-id="container"
-      data-settings='{"id" : "employeeDirectory"}'
+      data-settings='{"id" : "employee.directory"}'
       data-handle-validation="true"
     ></div>
   </body>

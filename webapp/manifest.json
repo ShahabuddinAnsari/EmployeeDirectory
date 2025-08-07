@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "employeeDirectory",
+    "id": "employee.directory",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -35,8 +35,9 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.138.1",
+      "minUI5Version": "1.65.6",
       "libs": {
+        "sap.ui.layout": {},
         "sap.m": {},
         "sap.ui.core": {}
       }
@@ -46,10 +47,14 @@
       "cozy": true
     },
     "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/employees.json"
+      },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "employeeDirectory.i18n.i18n"
+          "bundleName": "employee.directory.i18n.i18n"
         }
       }
     },
@@ -68,26 +73,37 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "employeeDirectory.view",
-        "async": true,
-        "viewPath": "employeeDirectory.view"
+        "path": "employee.directory.view",
+        "async": true
       },
       "routes": [
         {
-          "name": "RouteEmployeeList",
-          "pattern": ":?query:",
+          "name": "employeeList",
+          "pattern": "",
           "target": ["TargetEmployeeList"]
+        },
+        {
+          "pattern": "employee/{employeeId}",
+          "name": "employeeDetails",
+          "target": ["TargetEmployeeDetails"]
         }
       ],
       "targets": {
         "TargetEmployeeList": {
-          "id": "EmployeeList",
-          "name": "EmployeeList"
+          "viewId": "EmployeeList",
+          "viewName": "EmployeeList",
+          "viewType": "XML"
+        },
+        "TargetEmployeeDetails": {
+          "viewId": "EmployeeDetails",
+          "viewName": "EmployeeDetails",
+          "viewType": "XML",
+          "viewLevel": 1
         }
       }
     },
     "rootView": {
-      "viewName": "employeeDirectory.view.App",
+      "viewName": "employee.directory.view.App",
       "type": "XML",
       "id": "App",
       "async": true

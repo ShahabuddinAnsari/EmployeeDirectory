@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="employee.directory.controller.EmployeeDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Employee Details Page"
+        showNavButton="true"
+    >
+        <Text
+            id="empDetailstemp"
+            text="This is Emp Details page"
+        />
+    </Page>
+</mvc:View>

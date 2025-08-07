@@ -1,0 +1,46 @@
+{
+  "employees": [
+    {
+      "id": "EOO1",
+      "name": "Rohit Sharma",
+      "role": "Developer",
+      "department": "IT",
+      "email": "rohit.sharma@example.com"
+    },
+    {
+      "id": "EOO2",
+      "name": "Virat Kohli",
+      "role": "Support",
+      "department": "IT",
+      "email": "virat.kohli@example.com"
+    },
+    {
+      "id": "EOO3",
+      "name": "Rahul Dravid",
+      "role": "Coach",
+      "department": "Sports",
+      "email": "rahul.dravid@example.com"
+    },
+    {
+      "id": "EOO4",
+      "name": "Ishant Sharma",
+      "role": "Bowler",
+      "department": "Bowling",
+      "email": "ishant.sharma@example.com"
+    },
+    {
+      "id": "EOO5",
+      "name": "Bumrah",
+      "role": "Production Support",
+      "department": "PSM",
+      "email": "Bumrah@example.com"
+    },
+    {
+      "id": "EOO6",
+      "name": "Shubhman Gill",
+      "role": "Voice Capton",
+      "department": "HR",
+      "email": "shubhman.gill@example.com"
+    }
+  ]
+}
