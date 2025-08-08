@@ -4,13 +4,39 @@
     xmlns="sap.m"
 >
     <Page
-        id="page"
-        title="Employee Details Page"
+        id="employeeDetailsContainer"
+        title="Employee Details"
         showNavButton="true"
+        showHeader="true"
+        navButtonPress="onNavBack"
     >
-        <Text
-            id="empDetailstemp"
-            text="This is Emp Details page"
-        />
+        <headerContent>
+            <Button
+                id="btnHeaderHelpDetails"
+                text="Help"
+            />
+        </headerContent>
+        <content>
+            <VBox
+                id="employeeDetailsBox"
+                class="sapUiSmallMargin"
+            >
+                <Text
+                    id="employeeName"
+                    text="{selectedEmployeeModel>name}"
+                    class="sapUiLargeMarginBottom"
+                />
+                <Text
+                    id="employeeRole"
+                    text="{selectedEmployeeModel>role}"
+                    class="sapUiMediumMarginBottom"
+                />
+                <Text
+                    id="employeeEmail"
+                    text="{selectedEmployeeModel>email}"
+                    class="sapUiMediumMarginBottom"
+                />
+            </VBox>
+        </content>
     </Page>
 </mvc:View>

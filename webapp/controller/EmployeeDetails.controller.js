@@ -17,11 +17,32 @@ sap.ui.define(
 
         _onRouteMatched(oEvent) {
           const sEmployeeId = oEvent.getParameter("arguments").employeeId;
-          console.log("+++ employeeID in onRoutMatched ", sEmployeeId);
 
-          this.getView().bindElement({
-            path: `/employee/${sEmployeeId}`,
-          });
+          const oSelectedEmployee = this.getView()
+            .getModel()
+            .getProperty("/employees")
+            .find((employee) => employee.id === sEmployeeId);
+
+          if (oSelectedEmployee) {
+            const oSelectedEmployeeModel = new sap.ui.model.json.JSONModel(
+              oSelectedEmployee
+            );
+
+            this.getView().setModel(
+              oSelectedEmployeeModel,
+              "selectedEmployeeModel"
+            );
+
+            this.getView().bindElement({
+              path: "/",
+              model: "selectedEmployeeModel",
+            });
+          }
+        },
+
+        onNavBack() {
+          const oRouter = this.getOwnerComponent().getRouter();
+          oRouter.navTo("employeeList", {}, true);
         },
       }
     );
