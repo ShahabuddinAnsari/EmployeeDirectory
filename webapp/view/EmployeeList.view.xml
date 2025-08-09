@@ -6,8 +6,6 @@
     <Page
         id="employeeListContainer"
         title="Employee List"
-        showNavButton="true"
-        showHeader="true"
     >
         <headerContent>
             <Button
