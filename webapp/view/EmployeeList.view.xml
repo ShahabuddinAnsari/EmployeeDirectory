@@ -16,7 +16,9 @@
         <content>
             <List
                 id="employeeLists"
-                items="{/employees}"
+                items="{
+                    path: '/Employees'
+                }"
                 itemPress="onEmpListItemPress"
             >
                 <StandardListItem
