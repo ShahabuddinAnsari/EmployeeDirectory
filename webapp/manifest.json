@@ -14,6 +14,15 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.18.4",
       "toolsId": "2463201b-0cbc-44a3-a888-9457e5753512"
+    },
+    "dataSources": {
+      "employeeService": {
+        "uri": "/V2/Northwind/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -48,8 +57,11 @@
     },
     "models": {
       "": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/employees.json"
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "employeeService",
+        "settings": {
+          "defaultBindingMode": "TwoWay"
+        }
       },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
@@ -58,6 +70,7 @@
         }
       }
     },
+
     "resources": {
       "css": [
         {
